@@ -1,7 +1,8 @@
 # technical-test
 Technical test - Teresa Morenés
 
-
+- Complete test
+- Share repository to monojones@gmail.com
 
 # Ex 1:
 -----
