@@ -45,7 +45,7 @@ Since the sintax used to export this module is from CJS (CommonJs), we need the 
 1. import {a,b} from './module.js'
 2. import \* as module from './module.js'
 
-Also exporting is simpler in ES-Modules
+Also, exporting is simpler in ES-Modules
 
 1. export function a(cb) => import { a } from '...'
 2. export default function b(cb) => import anyName from '...'
@@ -54,12 +54,12 @@ Also exporting is simpler in ES-Modules
 
 ## - Which is the most elegant solution in your opinion?
 
-1. Most elegant solution is (ES Modules).
-2. Makes the module tree shakeable, meaning the consumer imports the code wanted and renamed if needed, to shakes off the rest, resulting in smaller bundle sizes and better performance.
+1. The most elegant solution is (ES Modules).
+2. Makes the module tree shakeable, meaning the consumer imports the code wanted and renamed if needed, to shake off the rest, resulting in smaller bundle sizes and better performance.
 3. Also performs in browsers.
 4. Imports are static and hoisted in parsetime.
-5. Enables to use static analizing tools.
-6. In CommonJS, require() is a function meaning it will be called and get an error, if exits, in runtime.
+5. Enables to use static analyzing tools.
+6. In CommonJS, require() is a function meaning it will be called and get an error, if exits, at runtime.
 
 ```
 //ES-Modules sintax
@@ -77,7 +77,13 @@ b(cb)
 
 ---
 
-Enum top 5 features a table web component should have
+## Enum top 5 features a table web component should have
+
+1. Sorting by one or multiple columns
+2. Filtering
+3. Grouping
+4. Tree mode
+5. Cell and Row Editing
 
 # Ex 3:
 
