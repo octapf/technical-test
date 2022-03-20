@@ -35,10 +35,10 @@ Since the sintax used to export this module is from CJS (CommonJs), we need the 
 
 ### CommonJS
 
-const b = require('./modules/ex1module').b
-const a = require('./modules/ex1module').a
-const module = require('./modules/ex1module')
-const { a, b } = require('./modules/ex1module')
+1. const b = require('./modules/ex1module').b
+2. const a = require('./modules/ex1module').a
+3. const module = require('./modules/ex1module')
+4. const { a, b } = require('./modules/ex1module')
 
 ### ES-Modules (Node-13)
 
@@ -54,12 +54,12 @@ Also exporting is simpler in ES-Modules
 
 ## - Which is the most elegant solution in your opinion?
 
-Most elegant solution is (ES Modules).
-Makes the module tree shakeable, meaning the consumer imports the code wanted and renamed if needed, to shakes off the rest, resulting in smaller bundle sizes and better performance.
-Also performs in browsers.
-Imports are static and hoisted in parsetime.
-Enables to use static analizing tools
-In CommonJS, require() is a function meaning it will be called and get an error, if exits, in runtime.
+1. Most elegant solution is (ES Modules).
+2. Makes the module tree shakeable, meaning the consumer imports the code wanted and renamed if needed, to shakes off the rest, resulting in smaller bundle sizes and better performance.
+3. Also performs in browsers.
+4. Imports are static and hoisted in parsetime.
+5. Enables to use static analizing tools.
+6. In CommonJS, require() is a function meaning it will be called and get an error, if exits, in runtime.
 
 ```
 //ES-Modules sintax
