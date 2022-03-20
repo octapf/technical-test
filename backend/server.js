@@ -7,10 +7,6 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-app.get('/', (res) => {
-	res.send('Welcome to the technical test RESTFul API')
-})
-
 /**
  * ! RESTful API to manage countries
  * * octapf - 20/03/2022
@@ -18,7 +14,10 @@ app.get('/', (res) => {
  * @param res {Express.Response}
  */
 app
-	.get('/api/countries', (res) => {
+	.get('/', (req, res) => {
+		res.send('Welcome to the technical test RESTFul API')
+	})
+	.get('/api/countries', (req, res) => {
 		res.status(200).json(countries)
 	})
 	.post('/api/countries', (req, res) => {
