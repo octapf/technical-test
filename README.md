@@ -6,8 +6,10 @@ Technical test - Teresa Morenés
 
 # Ex 1:
 -----
-If you had to use the next node.js module and call methods a and then b sequencially, explain why it's not so straightforward and what are the different solutions if we are using node v.8+.
-Which is the most elegant solution in your opinion.
+If you had to use the next node.js module and call methods a and then b sequencially, explain:
+- why it's not so straightforward 
+- what are the different solutions if we are using node v.8+.
+- Which is the most elegant solution in your opinion.
 
 ```
 module.exports = {
