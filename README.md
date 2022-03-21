@@ -29,48 +29,61 @@ If you had to use the previous node.js module and call methods a and then b sequ
 
 ## - why it's not so straightforward?
 
-Since the sintax used to export this module is from CJS (CommonJs), we need the require() function to import the module. Ex: const { a, b } = require('./modules/ex1module')
+Is necesary to import function A and execute it with a callBack what will execute function B passing another callback with the message 'Done'. It is known as callBack hell.
+
+```
+//CallBack Hell ***************************
+a(() => {
+	b(() => {
+		console.log('DONE')
+	})
+})
+```
 
 ## - what are the different solutions if we are using node v.8+?
+```
+// .then().catch() ********************************
 
-### CommonJS
+APromise()
+.then(()=> BPromise().then(()=> console.log("DONE")))
+```
+```
+// Async - Await **************************
+//Most elegant option
+async function main() {
+	try {
+		await APromise()
+		await BPromise()
+		console.log('DONE')
+	} catch (error) {}
+}
 
-1. const b = require('./modules/ex1module').b
-2. const a = require('./modules/ex1module').a
-3. const module = require('./modules/ex1module')
-4. const { a, b } = require('./modules/ex1module')
+main()
+```
 
-### ES-Modules (Node-13)
-
-1. import {a,b} from './module.js'
-2. import \* as module from './module.js'
-
-Also, exporting is simpler in ES-Modules
-
-1. export function a(cb) => import { a } from '...'
-2. export default function b(cb) => import anyName from '...'
-3. export {name as newName } => import { newName } from '...'
-4. export {a,b} => import {a,b} from '...'
 
 ## - Which is the most elegant solution in your opinion?
 
-1. The most elegant solution is (ES Modules).
-2. Makes the module tree shakeable, meaning the consumer imports the code wanted and renamed if needed, to shake off the rest, resulting in smaller bundle sizes and better performance.
-3. Also performs in browsers.
-4. Imports are static and hoisted in parsetime.
-5. Enables to use static analyzing tools.
-6. In CommonJS, require() is a function meaning it will be called and get an error, if exits, at runtime.
+- The most elegant solution is to use async-await pattern.
 
 ```
-//ES-Modules sintax
-import { a, b } from './module.js'
+import { a, b, APromise, BPromise } from './modules/ex1module.js'
 
 const cb = (param1, param2) => {
-console.log(param1, param2)
+	console.log(param1, param2)
 }
 
-a(cb)
-b(cb)
+// Async - Await **************************
+//Most elegant option
+async function main() {
+	try {
+		await APromise()
+		await BPromise()
+		console.log('DONE')
+	} catch (error) {}
+}
+
+main()
 ```
 
 # Ex 2:
