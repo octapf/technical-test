@@ -4,6 +4,8 @@ const cb = (param1, param2) => {
 	console.log(param1, param2)
 }
 
-a(cb)
-
-b(cb)
+a(() => {
+	b(() => {
+		console.log('DONE')
+	})
+})
