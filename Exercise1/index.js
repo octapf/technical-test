@@ -5,4 +5,5 @@ const cb = (param1, param2) => {
 }
 
 a(cb)
+
 b(cb)
