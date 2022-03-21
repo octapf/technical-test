@@ -94,8 +94,10 @@ b(cb)
 
 - Create a vue (v2) app with view to manage this rest
 
+Given array Countries
+
 ## 1. On root
         npm install
         npm run dev
 
-Given array Countries
+
