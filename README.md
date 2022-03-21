@@ -29,7 +29,7 @@ If you had to use the previous node.js module and call methods a and then b sequ
 
 ## - why it's not so straightforward?
 
-Is necesary to import function A and execute it with a callBack what will execute function B passing another callback with the message 'Done'. It is known as callBack hell.
+Is necesary to execute function A with a callBack that will execute function B passing another callback with the message 'Done'. It is known as callBack hell.
 
 ```
 //CallBack Hell ***************************
