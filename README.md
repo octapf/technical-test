@@ -1,6 +1,6 @@
 # technical-test
 
-Technical test - Teresa Morenés
+Technical test - Interview Morenés
 
 - Complete test
 - Share repository to monojones@gmail.com
